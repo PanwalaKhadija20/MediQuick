@@ -11,7 +11,7 @@ function App() {
         <img src={heroImg} alt="Hero" className="hero-img" />
 
         <h1>Welcome </h1>
-
+        <h2>To React </h2>   
         <p> React.</p>
       </div>
     </>
