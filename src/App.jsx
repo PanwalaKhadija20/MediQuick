@@ -10,7 +10,7 @@ function App() {
       <div className="hero">
         <img src={heroImg} alt="Hero" className="hero-img" />
 
-        <h1>Welcome to React</h1>
+        <h1>welcome to mediquick</h1>
 
         <p>Build amazing websites with React.</p>
       </div>
