@@ -12,7 +12,7 @@ function App() {
 
         <h1>welcome to mediquick</h1>
 
-        <p>Build amazing websites with React.</p>
+        <p> React.</p>
       </div>
     </>
   );
