@@ -13,6 +13,7 @@ function App() {
         <h1>Welcome </h1>
         <h2>To React </h2>   
         <p> React.</p>
+        <p> it is pharmacy</p>
       </div>
     </>
   );
