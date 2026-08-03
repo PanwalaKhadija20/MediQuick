@@ -1,4 +1,5 @@
-import "./Navbar.css";
+import "../Navbar.css";
+import logoImg from "../assets/logo.png";
 import {
   FaMapMarkerAlt,
   FaSearch,
@@ -12,7 +13,7 @@ function Navbar() {
       {/* Logo */}
       <div className="logo">
         <img
-          src="/logo.png"
+          src={logoImg}
           alt="logo"
         />
         <div>
@@ -23,31 +24,27 @@ function Navbar() {
 
       {/* Location */}
       <div className="location">
-        <FaMapMarkerAlt />
-        <div>
-          <small>Deliver to</small>
-          <p>
-            Adajan, Surat <FaChevronDown />
-          </p>
-        </div>
-      </div>
+  <FaMapMarkerAlt className="location-icon" />
 
-      {/* Search */}
-      <div className="search-box">
-        <input
-          type="text"
-          placeholder="Search medicines, health products..."
-        />
-        <button>
-          <FaSearch />
-        </button>
-      </div>
+  <div className="location-text">
+    <small>Deliver to</small>
+
+    <select className="location-dropdown">
+      <option>Adajan, Surat</option>
+      <option>Vesu, Surat</option>
+      <option>Katargam, Surat</option>
+      <option>Varachha, Surat</option>
+      <option>Athwa, Surat</option>
+    </select>
+  </div>
+</div>
+
+   
 
       {/* Menu */}
       <div className="menu">
         <a href="/">Categories</a>
         <a href="/">Offers</a>
-        <a href="/">Upload Rx</a>
         <a href="/">Track Order</a>
         <a href="/">Help</a>
       </div>
