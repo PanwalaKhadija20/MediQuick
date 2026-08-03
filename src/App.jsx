@@ -7,14 +7,6 @@ function App() {
     <>
       <Navbar />
 
-      <div className="hero">
-        <img src={heroImg} alt="Hero" className="hero-img" />
-
-        <h1>Welcome </h1>
-        <h2>To React </h2>   
-        <p> React.</p>
-        <p> it is pharmacy</p>
-      </div>
     </>
   );
 }
