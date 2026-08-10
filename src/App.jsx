@@ -4,6 +4,7 @@ import Hero from "./component/Hero";
 import CategorySection from "./component/CategorySection";
 import OfferBanner from "./component/OfferBanner";
 import PopularMedicines from "./component/PopularMedicines";
+import TopPharmacies from "./component/TopPharmacies";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <CategorySection />
        <OfferBanner />
        <PopularMedicines />
-
+      <TopPharmacies />
        
     </>
   );
