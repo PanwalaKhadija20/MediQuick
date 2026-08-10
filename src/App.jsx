@@ -3,6 +3,7 @@ import Navbar from "./component/Navbar";
 import Hero from "./component/Hero";
 import CategorySection from "./component/CategorySection";
 import OfferBanner from "./component/OfferBanner";
+import PopularMedicines from "./component/PopularMedicines";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Hero />
       <CategorySection />
        <OfferBanner />
+       <PopularMedicines />
 
        
     </>
