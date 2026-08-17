@@ -1,0 +1,159 @@
+.customer-section {
+  width: 100%;
+  padding: 35px 5%;
+  background: #faf8f2;
+  box-sizing: border-box;
+}
+
+.customer-section h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #222;
+  margin: 0 0 25px;
+  font-weight: 700;
+}
+
+/* Main reviews area */
+.reviews-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Cards container */
+.reviews-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+/* Individual card */
+.review-card {
+  position: relative;
+  width: 31%;
+  min-height: 135px;
+  background: white;
+  border-radius: 10px;
+  padding: 18px 25px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Quote */
+.quote {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #c9c9c9;
+}
+
+/* Review text */
+.review-text {
+  margin: 15px 0 10px;
+  padding-left: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Customer name */
+.review-card h3 {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #222;
+  font-weight: 600;
+}
+
+/* Stars */
+.stars {
+  color: #f5a623;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* Arrow buttons */
+.review-arrow {
+  position: absolute;
+  z-index: 5;
+
+  width: 35px;
+  height: 35px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: white;
+  color: #555;
+
+  font-size: 28px;
+  line-height: 30px;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-arrow:hover {
+  background: #006b5b;
+  color: white;
+}
+
+.left-arrow {
+  left: -12px;
+}
+
+.right-arrow {
+  right: -12px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .review-card {
+    width: 30%;
+    padding: 15px;
+  }
+
+  .review-text {
+    font-size: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .customer-section {
+    padding: 25px 4%;
+  }
+
+  .reviews-container {
+    gap: 10px;
+  }
+
+  .review-card {
+    width: 100%;
+  }
+
+  .review-card:nth-child(2),
+  .review-card:nth-child(3) {
+    display: none;
+  }
+
+  .left-arrow {
+    left: -8px;
+  }
+
+  .right-arrow {
+    right: -8px;
+  }
+
+  .customer-section h2 {
+    font-size: 20px;
+  }
+}
