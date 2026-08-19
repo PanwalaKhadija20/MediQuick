@@ -1,5 +1,6 @@
 import "../Navbar.css";
 import logoImg from "../assets/logo.png";
+import { Link } from "react-router-dom";
 import {
   FaMapMarkerAlt,
   FaSearch,
@@ -43,7 +44,7 @@ function Navbar() {
 
       {/* Menu */}
       <div className="menu">
-        <a href="/">Categories</a>
+        <Link to="/categories">Categories</Link>
         <a href="/">Offers</a>
         <a href="/">Track Order</a>
         <a href="/">Help</a>

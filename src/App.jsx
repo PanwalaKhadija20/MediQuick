@@ -1,4 +1,7 @@
 import "./App.css";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Navbar from "./component/Navbar";
 import Hero from "./component/Hero";
 import CategorySection from "./component/CategorySection";
@@ -8,8 +11,9 @@ import TopPharmacies from "./component/TopPharmacies";
 import WhyChoose from "./component/WhyChoose";
 import CustomerReviews from "./component/CustomerReviews";
 import Footer from "./component/Footer";
+import Categories from "./pages/Categories";
 
-function App() {
+function Home() {
   return (
     <>
       <Navbar />
@@ -22,6 +26,33 @@ function App() {
         <CustomerReviews />
       <Footer />
     </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+
+      <Routes>
+
+        {/* Home Page */}
+        <Route path="/" element={<Home />} />
+
+        {/* Categories Page */}
+        <Route
+          path="/categories"
+          element={
+            <>
+              <Navbar />
+              <Categories />
+              <Footer />
+            </>
+          }
+        />
+
+      </Routes>
+
+    </BrowserRouter>
   );
 }
 
