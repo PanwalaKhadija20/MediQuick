@@ -12,6 +12,7 @@ import WhyChoose from "./component/WhyChoose";
 import CustomerReviews from "./component/CustomerReviews";
 import Footer from "./component/Footer";
 import Categories from "./pages/Categories";
+import TrackOrder from "./pages/TrackOrder";
 
 function Home() {
   return (
@@ -49,7 +50,17 @@ function App() {
             </>
           }
         />
-
+        {/* Track Order Page */}
+        <Route
+          path="/track-order"
+          element={
+            <>
+              <Navbar />
+              <TrackOrder />
+              <Footer />
+            </>
+          }
+        />
       </Routes>
 
     </BrowserRouter>

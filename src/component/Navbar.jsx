@@ -46,7 +46,7 @@ function Navbar() {
       <div className="menu">
         <Link to="/categories">Categories</Link>
         <a href="/">Offers</a>
-        <a href="/">Track Order</a>
+        <Link to="/track-order">Track Order</Link>
         <a href="/">Help</a>
       </div>
 
