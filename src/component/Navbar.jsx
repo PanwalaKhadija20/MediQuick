@@ -50,11 +50,11 @@ function Navbar() {
         <a href="/">Help</a>
       </div>
 
-      {/* Cart */}
-      <div className="cart">
+     {/* Cart */}
+      <Link to="/cart" className="cart">
         <FaShoppingCart />
         <span>0</span>
-      </div>
+      </Link>
 
       {/* Login */}
       <button className="login-btn">

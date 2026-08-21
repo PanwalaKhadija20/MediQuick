@@ -13,6 +13,8 @@ import CustomerReviews from "./component/CustomerReviews";
 import Footer from "./component/Footer";
 import Categories from "./pages/Categories";
 import TrackOrder from "./pages/TrackOrder";
+import Cart from "./component/Cart";
+import Checkout from "./component/Checkout";
 
 function Home() {
   return (
@@ -61,6 +63,30 @@ function App() {
             </>
           }
         />
+        {/* cart Page */}
+         <Route path="/" element={<Home />} />
+
+        <Route
+          path="/cart"
+          element={
+            <>
+              <Navbar />
+              <Cart />
+        
+            </>
+        }
+        />
+        {/* checkout */}
+        <Route 
+        path="/checkout" 
+        element={
+          <>
+          <Navbar />
+        <Checkout />
+        </>
+        }
+         />
+        
       </Routes>
 
     </BrowserRouter>
