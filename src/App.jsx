@@ -2,52 +2,41 @@ import "./App.css";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Navbar from "./component/Navbar";
-import Hero from "./component/Hero";
-import CategorySection from "./component/CategorySection";
-import OfferBanner from "./component/OfferBanner";
-import PopularMedicines from "./component/PopularMedicines";
-import TopPharmacies from "./component/TopPharmacies";
-import WhyChoose from "./component/WhyChoose";
-import CustomerReviews from "./component/CustomerReviews";
-import Footer from "./component/Footer";
+import {
+  Navbar,
+  Hero,
+  CategorySection,
+  OfferBanner,
+  PopularMedicines,
+  TopPharmacies,
+  WhyChoose,
+  CustomerReviews,
+  Footer,
+  Cart,
+  Checkout,
+  Offers,
+} from "./component";
 
 import Categories from "./pages/Categories";
 import TrackOrder from "./pages/TrackOrder";
 
-import Cart from "./component/Cart";
-import Checkout from "./component/Checkout";
-import Offers from "./component/Offers";
-
-
-// ================= HOME PAGE =================
 
 function Home() {
   return (
     <>
       <Navbar />
-
       <Hero />
-
       <CategorySection />
-
       <OfferBanner />
-
       <PopularMedicines />
-
       <TopPharmacies />
-
       <WhyChoose />
-
       <CustomerReviews />
-
       <Footer />
     </>
   );
 }
 
-
-// ================= APP =================
 
 function App() {
   return (
@@ -55,16 +44,13 @@ function App() {
 
       <Routes>
 
-        {/* ================= HOME PAGE ================= */}
-
+        {/* Home */}
         <Route
           path="/"
           element={<Home />}
         />
 
-
-        {/* ================= CATEGORIES PAGE ================= */}
-
+        {/* Categories */}
         <Route
           path="/categories"
           element={
@@ -76,9 +62,7 @@ function App() {
           }
         />
 
-
-        {/* ================= TRACK ORDER PAGE ================= */}
-
+        {/* Track Order */}
         <Route
           path="/track-order"
           element={
@@ -90,9 +74,7 @@ function App() {
           }
         />
 
-
-        {/* ================= CART PAGE ================= */}
-
+        {/* Cart */}
         <Route
           path="/cart"
           element={
@@ -103,9 +85,7 @@ function App() {
           }
         />
 
-
-        {/* ================= CHECKOUT PAGE ================= */}
-
+        {/* Checkout */}
         <Route
           path="/checkout"
           element={
@@ -116,9 +96,7 @@ function App() {
           }
         />
 
-
-        {/* ================= OFFERS PAGE ================= */}
-
+        {/* Offers */}
         <Route
           path="/offers"
           element={
