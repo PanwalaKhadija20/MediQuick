@@ -1,0 +1,1002 @@
+/* =====================================================
+   OFFERS PAGE
+===================================================== */
+
+.offers-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #101828;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.offers-header {
+  width: 100%;
+  min-height: 78px;
+  padding: 0 38px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  border-bottom: 1px solid #e5e7eb;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+
+/* Logo */
+
+.offer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 205px;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #e8f6f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.offer-logo h2 {
+  margin: 0;
+  font-size: 21px;
+  color: #111827;
+}
+
+.offer-logo span {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+
+/* Location */
+
+.delivery-location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 150px;
+}
+
+.delivery-location > svg {
+  font-size: 22px;
+  color: #111827;
+}
+
+.delivery-location small {
+  display: block;
+  color: #555;
+  font-size: 11px;
+}
+
+.delivery-location strong {
+  display: block;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+
+/* Search */
+
+.offer-search {
+  height: 44px;
+  flex: 1;
+  max-width: 380px;
+  display: flex;
+  border: 1px solid #d7dce0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.offer-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 17px;
+  font-size: 13px;
+}
+
+.offer-search button {
+  width: 50px;
+  border: none;
+  background: #007b5e;
+  color: white;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+
+/* Navigation */
+
+.offer-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  white-space: nowrap;
+}
+
+.offer-nav a {
+  text-decoration: none;
+  color: #111111;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 28px 0;
+}
+
+.offer-nav a:hover {
+  color: #007b5e;
+}
+
+.offer-nav a.active {
+  color: #006b52;
+  border-bottom: 3px solid #006b52;
+}
+
+
+/* Cart */
+
+.offer-cart {
+  position: relative;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.offer-cart span {
+  position: absolute;
+  top: -8px;
+  right: -9px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #006b52;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+
+/* Login */
+
+.login-btn {
+  border: none;
+  background: #006b52;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 7px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main {
+  padding: 0 38px;
+}
+
+
+/* Breadcrumb */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 0 12px;
+  font-size: 13px;
+  color: #667085;
+}
+
+.breadcrumb b {
+  font-size: 18px;
+  color: #98a2b3;
+}
+
+.breadcrumb strong {
+  color: #344054;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.offer-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 18px;
+}
+
+.offer-heading h1 {
+  font-size: 29px;
+  margin: 0 0 10px;
+  color: #101828;
+}
+
+.offer-heading p {
+  margin: 0;
+  font-size: 14px;
+  color: #475467;
+}
+
+
+/* Top discount */
+
+.top-discount {
+  min-width: 470px;
+  min-height: 80px;
+  padding: 10px 25px;
+  box-sizing: border-box;
+  border: 1px solid #d8e8e2;
+  background: #f2f9f6;
+  border-radius: 9px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.discount-icon {
+  width: 42px;
+  height: 42px;
+  background: #007b5e;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.top-discount small {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.discount-code {
+  margin-top: 8px;
+  padding: 7px 10px;
+  border: 1px solid #b8cfc7;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.discount-percent {
+  margin-left: auto;
+  text-align: center;
+}
+
+.discount-percent strong {
+  display: block;
+  font-size: 28px;
+  color: #075c46;
+}
+
+.discount-percent span {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   OFFER CATEGORIES
+===================================================== */
+
+.offer-categories {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border: 1px solid #e1e5e8;
+  border-radius: 9px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.offer-categories button {
+  min-height: 46px;
+  border: none;
+  border-right: 1px solid #e1e5e8;
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.offer-categories button:last-child {
+  border-right: none;
+}
+
+.offer-categories button:hover {
+  background: #f2f9f6;
+  color: #006b52;
+}
+
+.offer-categories .category-active {
+  background: #006b52;
+  color: white;
+}
+
+.offer-categories svg {
+  font-size: 19px;
+}
+
+
+/* =====================================================
+   OFFER CARDS
+===================================================== */
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 17px;
+  margin-bottom: 18px;
+}
+
+.offer-card {
+  min-height: 345px;
+  border-radius: 9px;
+  border: 1px solid #e2e6e8;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+/* Card backgrounds */
+
+.medicine-offer {
+  background: #f3f9f6;
+}
+
+.health-offer {
+  background: #fff8eb;
+}
+
+.personal-offer {
+  background: #fff3f7;
+}
+
+.bank-offer {
+  background: #eef7ff;
+}
+
+.delivery-offer {
+  background: #f1faf5;
+}
+
+
+/* Tag */
+
+.offer-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  padding: 5px 9px;
+  border-radius: 5px;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.green-tag {
+  background: #d7eee5;
+  color: #096044;
+}
+
+.yellow-tag {
+  background: #ffebc1;
+  color: #9b6500;
+}
+
+.pink-tag {
+  background: #f7ddea;
+  color: #9b3261;
+}
+
+.blue-tag {
+  background: #d9ebfa;
+  color: #155b87;
+}
+
+.light-green-tag {
+  background: #d9eee3;
+  color: #116044;
+}
+
+
+/* Offer Image */
+
+.offer-image {
+  height: 155px;
+  margin-top: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.offer-image img {
+  max-width: 100%;
+  width: 150px;
+  height: 130px;
+  object-fit: contain;
+}
+
+
+/* Offer content */
+
+.offer-content {
+  padding: 0 20px 15px;
+}
+
+.offer-content h2 {
+  margin: 5px 0 3px;
+  font-size: 19px;
+  color: #075c46;
+}
+
+.health-offer h2 {
+  color: #ad6900;
+}
+
+.personal-offer h2 {
+  color: #8d2755;
+}
+
+.bank-offer h2 {
+  color: #124c78;
+}
+
+.delivery-offer h2 {
+  color: #075c46;
+}
+
+.offer-subtitle {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+/* Code */
+
+.offer-code {
+  border: 1px dashed #719c8e;
+  border-radius: 6px;
+  padding: 7px;
+  margin: 5px 0 10px;
+  font-size: 11px;
+  background: rgba(255,255,255,0.4);
+}
+
+
+/* Condition */
+
+.offer-condition {
+  margin: 10px 0 13px;
+  font-size: 11px;
+}
+
+
+/* Button */
+
+.shop-offer-btn {
+  width: 100%;
+  height: 32px;
+
+  background: transparent;
+  border: 1px solid #397c69;
+  color: #075c46;
+
+  border-radius: 5px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.shop-offer-btn:hover {
+  background: #006b52;
+  color: white;
+}
+
+
+/* Valid */
+
+.offer-valid {
+  margin-top: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 10px;
+  color: #344054;
+}
+
+.offer-valid svg {
+  color: #006b52;
+}
+
+
+/* =====================================================
+   BENEFITS
+===================================================== */
+
+.offer-benefits {
+  min-height: 95px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  border: 1px solid #e1e5e8;
+  border-radius: 9px;
+
+  margin-bottom: 15px;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 20px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.benefit:last-child {
+  border-right: none;
+}
+
+.benefit > svg {
+  font-size: 29px;
+  color: #006b52;
+  flex-shrink: 0;
+}
+
+.benefit h3 {
+  margin: 0;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.benefit p {
+  margin: 6px 0 0;
+  font-size: 10px;
+  line-height: 15px;
+  color: #667085;
+}
+
+
+/* =====================================================
+   SUBSCRIBE
+===================================================== */
+
+.offer-subscribe {
+  min-height: 62px;
+  background: #f1f8f5;
+
+  border-radius: 8px;
+
+  padding: 10px 28px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 0;
+}
+
+.subscribe-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.email-icon {
+  width: 38px;
+  height: 38px;
+
+  border: 2px solid #006b52;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #006b52;
+}
+
+.subscribe-left h2 {
+  font-size: 15px;
+  margin: 0 0 3px;
+}
+
+.subscribe-left p {
+  margin: 0;
+  font-size: 11px;
+  color: #475467;
+}
+
+.subscribe-form {
+  display: flex;
+  width: 48%;
+  height: 36px;
+}
+
+.subscribe-form input {
+  flex: 1;
+
+  border: 1px solid #d0d5dd;
+  border-right: none;
+
+  border-radius: 5px 0 0 5px;
+
+  padding: 0 13px;
+  outline: none;
+
+  font-size: 11px;
+}
+
+.subscribe-form button {
+  width: 120px;
+
+  border: none;
+  border-radius: 0 5px 5px 0;
+
+  background: #006b52;
+  color: white;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.offers-footer {
+  background: #005b49;
+  color: white;
+  margin-top: 0;
+  padding: 28px 38px 12px;
+}
+
+
+/* Footer main */
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(5, 1fr);
+  gap: 30px;
+}
+
+
+/* Footer brand */
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo > span {
+  font-size: 28px;
+}
+
+.footer-logo h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.footer-logo small {
+  font-size: 8px;
+}
+
+.footer-brand > p {
+  font-size: 11px;
+  line-height: 18px;
+  max-width: 210px;
+  color: #e2f1ed;
+}
+
+
+/* Social */
+
+.social-icons {
+  display: flex;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.social-icons a {
+  width: 28px;
+  height: 28px;
+
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  text-decoration: none;
+
+  font-size: 12px;
+}
+
+
+/* Footer columns */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column h3 {
+  font-size: 12px;
+  margin: 3px 0 13px;
+}
+
+.footer-column a {
+  color: #e0eeea;
+  text-decoration: none;
+  font-size: 11px;
+  margin-bottom: 9px;
+}
+
+.footer-column a:hover {
+  color: white;
+}
+
+
+/* Payment */
+
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(2, 65px);
+  gap: 8px;
+}
+
+.payment-methods span {
+  background: white;
+  color: #222;
+
+  min-height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+
+/* Footer bottom */
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+
+  margin-top: 18px;
+  padding-top: 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 10px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom p:last-child {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+  .offers-header {
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .offer-nav {
+    gap: 12px;
+  }
+
+  .offer-nav a {
+    font-size: 11px;
+  }
+
+  main {
+    padding: 0 20px;
+  }
+
+  .offers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .offer-benefits {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .benefit:nth-child(3) {
+    border-right: none;
+  }
+
+  .footer-main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+@media (max-width: 900px) {
+
+  .offers-header {
+    flex-wrap: wrap;
+    padding: 15px 20px;
+  }
+
+  .offer-search {
+    order: 3;
+    max-width: none;
+    width: 100%;
+  }
+
+  .offer-nav {
+    display: none;
+  }
+
+  .offer-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .top-discount {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .offer-categories {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .offers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .offer-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .offer-subscribe {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 18px;
+  }
+
+  .subscribe-form {
+    width: 100%;
+  }
+
+  .footer-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  main {
+    padding: 0 12px;
+  }
+
+  .offer-logo {
+    min-width: auto;
+  }
+
+  .delivery-location {
+    display: none;
+  }
+
+  .login-btn {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .offer-heading h1 {
+    font-size: 24px;
+  }
+
+  .top-discount {
+    flex-wrap: wrap;
+  }
+
+  .discount-percent {
+    margin-left: 0;
+  }
+
+  .offer-categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .offer-categories button {
+    border-bottom: 1px solid #e1e5e8;
+  }
+
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .benefit:last-child {
+    border-bottom: none;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,432 @@
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 7%;
+  box-sizing: border-box;
+  background: #f5fbf8;
+  position: relative;
+}
+
+/* =========================
+   HERO LEFT
+========================= */
+
+.hero-left {
+  width: 52%;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-left h1 {
+  margin: 0 0 15px;
+  font-size: 46px;
+  line-height: 1.15;
+  color: #222;
+  font-weight: 700;
+}
+
+.hero-left h1 span {
+  color: #16894f;
+}
+
+.hero-left p {
+  margin: 0 0 25px;
+  color: #666;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.hero-search {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  z-index: 10;
+}
+
+.search-box {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 0 8px 0 18px;
+  box-sizing: border-box;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.search-box input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #333;
+  min-width: 0;
+}
+
+.search-box input::placeholder {
+  color: #999;
+}
+
+/* Search button */
+
+.search-button {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 9px;
+  background: #16894f;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 17px;
+  transition: 0.2s ease;
+}
+
+.search-button:hover {
+  background: #10743f;
+}
+
+/* Search icons */
+
+.search-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 8px;
+}
+
+.search-icon {
+  color: #777;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+/* =========================
+   SEARCH RESULTS CONTAINER
+========================= */
+
+.search-results-container {
+  width: 100%;
+  max-width: 530px;
+  position: relative;
+  z-index: 20;
+}
+
+/* =========================
+   SEARCH RESULT CARD
+========================= */
+
+.search-result {
+  width: 100%;
+  max-width: 530px;
+  margin-top: 15px;
+  padding: 14px;
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 14px;
+  box-sizing: border-box;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Medicine card */
+
+.search-medicine-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* =========================
+   MEDICINE IMAGE
+========================= */
+
+.search-medicine-image {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Actual medicine image */
+
+.search-medicine-image img {
+  width: 65px !important;
+  height: 65px !important;
+  max-width: 65px !important;
+  max-height: 65px !important;
+  object-fit: contain;
+  display: block;
+}
+
+/* =========================
+   MEDICINE DETAILS
+========================= */
+
+.search-medicine-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-medicine-details h3 {
+  margin: 0 0 5px;
+  color: #222;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.search-subtitle {
+  margin: 0 0 8px;
+  color: #777;
+  font-size: 13px;
+}
+
+/* =========================
+   PRICE
+========================= */
+
+.search-price-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.search-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #16894f;
+}
+
+.search-old-price {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 12px;
+}
+
+.search-discount {
+  background: #e8f7ee;
+  color: #16894f;
+  padding: 3px 6px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* =========================
+   RATING
+========================= */
+
+.search-rating {
+  margin-top: 7px;
+  font-size: 13px;
+  color: #555;
+}
+
+.search-rating span {
+  color: #f5a623;
+  margin-right: 4px;
+}
+
+/* =========================
+   ADD TO CART
+========================= */
+
+.search-add-cart {
+  margin-top: 9px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 7px;
+  background: #16894f;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.search-add-cart:hover {
+  background: #10743f;
+}
+
+/* =========================
+   MEDICINE NOT FOUND
+========================= */
+
+.not-found {
+  margin: 15px 0 0;
+  color: #d9534f;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* =========================
+   HERO RIGHT
+========================= */
+
+.hero-right {
+  width: 43%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-right img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* =========================
+   HERO FEATURES
+========================= */
+
+.hero-features {
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.hero-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+  font-size: 13px;
+}
+
+.hero-feature svg {
+  color: #16894f;
+  font-size: 17px;
+}
+
+/* =========================
+   SEARCH RESULT RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    padding: 40px 5%;
+  }
+
+  .hero-left {
+    width: 55%;
+  }
+
+  .hero-right {
+    width: 40%;
+  }
+
+  .hero-left h1 {
+    font-size: 38px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: auto;
+    padding: 35px 20px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-left {
+    width: 100%;
+  }
+
+  .hero-left h1 {
+    font-size: 32px;
+  }
+
+  .hero-left p {
+    font-size: 15px;
+  }
+
+  .hero-search {
+    max-width: 100%;
+  }
+
+  .search-box {
+    height: 52px;
+  }
+
+  .search-result {
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  .search-medicine-card {
+    gap: 10px;
+  }
+
+  .search-medicine-image {
+    width: 65px;
+    height: 65px;
+  }
+
+  .search-medicine-image img {
+    width: 55px !important;
+    height: 55px !important;
+    max-width: 55px !important;
+    max-height: 55px !important;
+  }
+
+  .search-medicine-details h3 {
+    font-size: 16px;
+  }
+
+  .search-subtitle {
+    font-size: 12px;
+  }
+
+  .search-price {
+    font-size: 16px;
+  }
+
+  .search-add-cart {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  .hero-right {
+    width: 80%;
+    margin-top: 30px;
+  }
+
+  .hero-right img {
+    width: 80%;
+    max-width: 200px;
+  }
+
+  .hero-features {
+    gap: 15px;
+  }
+}

@@ -11,25 +11,15 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="cart-footer">
 
-      <div className="footer-content">
+        <div className="footer-brand">
 
-        {/* MediQuick */}
-        <div className="footer-about">
+          <h2>💊 MediQuick</h2>
 
-          <div className="footer-logo">
-
-            <div className="logo-icon">
-              <Smartphone size={20} />
-            </div>
-
-            <div>
-              <h2>MediQuick</h2>
-              <span>Medicine Delivered Fast</span>
-            </div>
-
-          </div>
+          <p>
+            Medicine Delivered Fast
+          </p>
 
           <p>
             Your trusted partner for fast and
@@ -38,116 +28,86 @@ function Footer() {
 
           <div className="social-icons">
 
-            <a href="#">
-              <Share2 size={17} />
-            </a>
-
-            <a href="#">
-              <MessageCircle size={17} />
-            </a>
-
-            <a href="#">
-              <Video size={17} />
-            </a>
-
-            <a href="#">
-              <Smartphone size={17} />
-            </a>
+            <span>f</span>
+            <span>◎</span>
+            <span>𝕏</span>
+            <span>in</span>
 
           </div>
 
         </div>
 
-
-        {/* Company */}
-        <div className="footer-column">
+        <div>
 
           <h3>Company</h3>
 
-          <a href="#">About Us</a>
-          <a href="#">Careers</a>
-          <a href="#">Blog</a>
-          <a href="#">Contact Us</a>
+          <p>About Us</p>
+          <p>Careers</p>
+          <p>Blog</p>
+          <p>Contact Us</p>
 
         </div>
 
-
-        {/* Customer Care */}
-        <div className="footer-column">
+        <div>
 
           <h3>Customer Care</h3>
 
-          <a href="#">Help Center</a>
-          <a href="#">How to Order</a>
-          <a href="#">Returns & Refunds</a>
-          <a href="#">Track Order</a>
+          <p>Help Center</p>
+          <p>How to Order</p>
+          <p>Returns & Refunds</p>
+          <p>Track Order</p>
 
         </div>
 
-
-        {/* My Account */}
-        <div className="footer-column">
+        <div>
 
           <h3>My Account</h3>
 
-          <a href="#">My Orders</a>
-          <a href="#">My Addresses</a>
-          <a href="#">My Profile</a>
-          <a href="#">Saved Medicines</a>
+          <p>My Orders</p>
+          <p>My Addresses</p>
+          <p>My Profile</p>
+          <p>Saved Medicines</p>
 
         </div>
 
-
-        {/* Legal */}
-        <div className="footer-column">
+        <div>
 
           <h3>Legal</h3>
 
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Refund Policy</a>
+          <p>Terms & Conditions</p>
+          <p>Privacy Policy</p>
+          <p>Refund Policy</p>
 
         </div>
 
-
-        {/* Payment */}
-        <div className="footer-column payment">
+        <div>
 
           <h3>We Accept</h3>
 
-          <div className="payments">
+          <div className="payment-icons">
 
             <span>UPI</span>
             <span>VISA</span>
-            <span>MC</span>
+            <span>💳</span>
             <span>RuPay</span>
 
           </div>
 
         </div>
 
-      </div>
-
-
-      {/* Bottom */}
-
-      <div className="footer-bottom">
-
-        <p>
-          © 2024 MediQuick. All rights reserved.
-        </p>
-
-        <div className="location">
-
-          <MapPin size={15} />
+        <div className="footer-bottom">
 
           <span>
-            Surat, Gujarat, India
+            © 2024 MediQuick. All rights reserved.
+          </span>
+
+          <span>
+            ⌖ Surat, Gujarat, India
           </span>
 
         </div>
 
-      </div>
+    
 
     </footer>
   );

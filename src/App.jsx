@@ -11,26 +11,43 @@ import TopPharmacies from "./component/TopPharmacies";
 import WhyChoose from "./component/WhyChoose";
 import CustomerReviews from "./component/CustomerReviews";
 import Footer from "./component/Footer";
+
 import Categories from "./pages/Categories";
 import TrackOrder from "./pages/TrackOrder";
+
 import Cart from "./component/Cart";
 import Checkout from "./component/Checkout";
+import Offers from "./component/Offers";
+
+
+// ================= HOME PAGE =================
 
 function Home() {
   return (
     <>
       <Navbar />
+
       <Hero />
+
       <CategorySection />
-       <OfferBanner />
-       <PopularMedicines />
+
+      <OfferBanner />
+
+      <PopularMedicines />
+
       <TopPharmacies />
-        <WhyChoose />
-        <CustomerReviews />
+
+      <WhyChoose />
+
+      <CustomerReviews />
+
       <Footer />
     </>
   );
 }
+
+
+// ================= APP =================
 
 function App() {
   return (
@@ -38,10 +55,16 @@ function App() {
 
       <Routes>
 
-        {/* Home Page */}
-        <Route path="/" element={<Home />} />
+        {/* ================= HOME PAGE ================= */}
 
-        {/* Categories Page */}
+        <Route
+          path="/"
+          element={<Home />}
+        />
+
+
+        {/* ================= CATEGORIES PAGE ================= */}
+
         <Route
           path="/categories"
           element={
@@ -52,7 +75,10 @@ function App() {
             </>
           }
         />
-        {/* Track Order Page */}
+
+
+        {/* ================= TRACK ORDER PAGE ================= */}
+
         <Route
           path="/track-order"
           element={
@@ -63,8 +89,9 @@ function App() {
             </>
           }
         />
-        {/* cart Page */}
-         <Route path="/" element={<Home />} />
+
+
+        {/* ================= CART PAGE ================= */}
 
         <Route
           path="/cart"
@@ -72,21 +99,37 @@ function App() {
             <>
               <Navbar />
               <Cart />
-        
             </>
-        }
+          }
         />
-        {/* checkout */}
-        <Route 
-        path="/checkout" 
-        element={
-          <>
-          <Navbar />
-        <Checkout />
-        </>
-        }
-         />
-        
+
+
+        {/* ================= CHECKOUT PAGE ================= */}
+
+        <Route
+          path="/checkout"
+          element={
+            <>
+              <Navbar />
+              <Checkout />
+            </>
+          }
+        />
+
+
+        {/* ================= OFFERS PAGE ================= */}
+
+        <Route
+          path="/offers"
+          element={
+            <>
+              <Navbar />
+              <Offers />
+              <Footer />
+            </>
+          }
+        />
+
       </Routes>
 
     </BrowserRouter>

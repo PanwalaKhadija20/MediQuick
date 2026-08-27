@@ -291,53 +291,8 @@ function TrackOrder() {
 
       </div>
 
-      {/* FOOTER */}
-      <footer className="footer">
-
-        <div className="footer-brand">
-          <h2>💊 MediQuick</h2>
-          <p>
-            Your trusted partner for fast and
-            reliable medicines delivery in Surat.
-          </p>
-
-          <div className="social-icons">
-            f &nbsp; ◎ &nbsp; 𝕏 &nbsp; in
-          </div>
-        </div>
-
-        <div>
-          <h3>Company</h3>
-          <p>About Us</p>
-          <p>Careers</p>
-          <p>Blog</p>
-          <p>Contact Us</p>
-        </div>
-
-        <div>
-          <h3>Customer Care</h3>
-          <p>Help Center</p>
-          <p>How to Order</p>
-          <p>Returns & Refunds</p>
-          <p>Track Order</p>
-        </div>
-
-        <div>
-          <h3>My Account</h3>
-          <p>My Orders</p>
-          <p>My Addresses</p>
-          <p>My Profile</p>
-          <p>Saved Medicines</p>
-        </div>
-
-        <div>
-          <h3>Legal</h3>
-          <p>Terms & Conditions</p>
-          <p>Privacy Policy</p>
-          <p>Refund Policy</p>
-        </div>
-
-      </footer>
+      
+      
 
     </div>
   );

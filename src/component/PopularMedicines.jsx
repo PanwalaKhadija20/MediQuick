@@ -1,8 +1,9 @@
 import React from "react";
 import "./PopularMedicines.css";
 
-const medicines = [
+export const medicines = [
   {
+    id: 1,
     name: "Paracetamol 650mg",
     subtitle: "Strip of 15 Tablets",
     price: "₹32.00",
@@ -12,6 +13,7 @@ const medicines = [
     image: "/images/paracetamol.jpeg",
   },
   {
+    id: 2,
     name: "Crocin 650mg",
     subtitle: "Strip of 15 Tablets",
     price: "₹48.00",
@@ -21,6 +23,7 @@ const medicines = [
     image: "/images/crocin.jpeg",
   },
   {
+    id: 3,
     name: "Dolo 650mg",
     subtitle: "Strip of 15 Tablets",
     price: "₹45.00",
@@ -30,6 +33,7 @@ const medicines = [
     image: "/images/dolo.jpeg",
   },
   {
+    id: 4,
     name: "Vicks VapoRub 25ml",
     subtitle: "Jar",
     price: "₹85.00",
@@ -39,6 +43,7 @@ const medicines = [
     image: "/images/vicks.jpeg",
   },
   {
+    id: 5,
     name: "ORS Electrolyte",
     subtitle: "Pack of 20g",
     price: "₹20.00",
@@ -50,6 +55,48 @@ const medicines = [
 ];
 
 function PopularMedicines() {
+
+  // Add medicine to cart
+  const addToCart = (medicine) => {
+    const existingCart =
+      JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingMedicine = existingCart.find(
+      (item) => item.id === medicine.id
+    );
+
+    let updatedCart;
+
+    if (existingMedicine) {
+      updatedCart = existingCart.map((item) =>
+        item.id === medicine.id
+          ? {
+              ...item,
+              quantity: (item.quantity || 1) + 1,
+            }
+          : item
+      );
+    } else {
+      updatedCart = [
+        ...existingCart,
+        {
+          ...medicine,
+          quantity: 1,
+        },
+      ];
+    }
+
+    localStorage.setItem(
+      "cart",
+      JSON.stringify(updatedCart)
+    );
+
+    // Notify other components that cart changed
+    window.dispatchEvent(new Event("cartUpdated"));
+
+    alert(`${medicine.name} added to cart!`);
+  };
+
   return (
     <section className="popular-medicines">
 
@@ -70,12 +117,18 @@ function PopularMedicines() {
           ‹
         </button>
 
-        {medicines.map((medicine, index) => (
-          <div className="medicine-card" key={index}>
+        {medicines.map((medicine) => (
+          <div
+            className="medicine-card"
+            key={medicine.id}
+          >
 
             {/* Product Image */}
             <div className="medicine-image">
-              <img src={medicine.image} alt={medicine.name} />
+              <img
+                src={medicine.image}
+                alt={medicine.name}
+              />
             </div>
 
             {/* Product Details */}
@@ -89,6 +142,7 @@ function PopularMedicines() {
 
               {/* Price */}
               <div className="price-row">
+
                 <span className="medicine-price">
                   {medicine.price}
                 </span>
@@ -100,12 +154,20 @@ function PopularMedicines() {
                 <span className="discount">
                   {medicine.discount}
                 </span>
+
               </div>
 
               {/* Rating */}
               <div className="rating">
-                <span className="star">★</span>
-                <span>{medicine.rating}</span>
+
+                <span className="star">
+                  ★
+                </span>
+
+                <span>
+                  {medicine.rating}
+                </span>
+
               </div>
 
               {/* Cart */}
@@ -115,13 +177,19 @@ function PopularMedicines() {
                   ♧
                 </span>
 
-                <button className="add-cart">
+                <button
+                  className="add-cart"
+                  onClick={() =>
+                    addToCart(medicine)
+                  }
+                >
                   Add to Cart
                 </button>
 
               </div>
 
             </div>
+
           </div>
         ))}
 
@@ -131,6 +199,7 @@ function PopularMedicines() {
         </button>
 
       </div>
+
     </section>
   );
 }
