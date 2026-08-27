@@ -106,7 +106,7 @@ const Offers = () => {
 
         <div className="breadcrumb">
           <span>Home</span>
-          <b>›</b>
+          <b>/</b>
           <strong>Offers</strong>
         </div>
 

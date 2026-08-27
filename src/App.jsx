@@ -14,7 +14,7 @@ import {
   Footer,
   Cart,
   Checkout,
-  Offers,
+  Offers
 } from "./component";
 
 import Categories from "./pages/Categories";

@@ -74,8 +74,6 @@ function TrackOrder() {
       <div className="breadcrumb">
         <span>Home</span>
         <span>/</span>
-        <span>My Orders</span>
-        <span>/</span>
         <strong>Track Order</strong>
       </div>
 
