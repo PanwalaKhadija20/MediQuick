@@ -4,54 +4,32 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import {
   Navbar,
-  Hero,
-  CategorySection,
-  OfferBanner,
-  PopularMedicines,
-  TopPharmacies,
-  WhyChoose,
-  CustomerReviews,
-  Footer,
   Cart,
   Checkout,
   Offers,
+<<<<<<< HEAD
   Login
+=======
+  Footer
+>>>>>>> 0a598cf3dc18f566124bc75cdf06ff588ea7db8e
 } from "./component";
 
+import Home from "./pages/Home";
 import Categories from "./pages/Categories";
 import TrackOrder from "./pages/TrackOrder";
-
-
-function Home() {
-  return (
-    <>
-      <Navbar />
-      <Hero />
-      <CategorySection />
-      <OfferBanner />
-      <PopularMedicines />
-      <TopPharmacies />
-      <WhyChoose />
-      <CustomerReviews />
-      <Footer />
-    </>
-  );
-}
-
 
 function App() {
   return (
     <BrowserRouter>
-
       <Routes>
 
-        {/* Home */}
+        {/* ================= HOME / INDEX ================= */}
         <Route
           path="/"
           element={<Home />}
         />
 
-        {/* Categories */}
+        {/* ================= CATEGORIES ================= */}
         <Route
           path="/categories"
           element={
@@ -63,7 +41,7 @@ function App() {
           }
         />
 
-        {/* Track Order */}
+        {/* ================= TRACK ORDER ================= */}
         <Route
           path="/track-order"
           element={
@@ -75,7 +53,7 @@ function App() {
           }
         />
 
-        {/* Cart */}
+        {/* ================= CART ================= */}
         <Route
           path="/cart"
           element={
@@ -86,7 +64,7 @@ function App() {
           }
         />
 
-        {/* Checkout */}
+        {/* ================= CHECKOUT ================= */}
         <Route
           path="/checkout"
           element={
@@ -97,7 +75,7 @@ function App() {
           }
         />
 
-        {/* Offers */}
+        {/* ================= OFFERS ================= */}
         <Route
           path="/offers"
           element={
@@ -121,7 +99,6 @@ function App() {
         />
 
       </Routes>
-
     </BrowserRouter>
   );
 }
