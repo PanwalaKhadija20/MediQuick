@@ -15,3 +15,4 @@ export { default as Checkout } from "./Checkout";
 
 export { default as CategorySidebar } from "./CategorySidebar";
 export { default as CategoryCard } from "./CategoryCard";
+export { default as Login } from "./Login";

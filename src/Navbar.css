@@ -127,20 +127,29 @@
     font-size:11px;
 }
 
-.login-btn{
-    background:#15844d;
-    color:#fff;
-    border:none;
-    padding:12px 22px;
-    border-radius:10px;
-    margin-left: 25px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
+.login-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  color: white;
+
+  padding: 10px 20px;
+  border-radius: 6px;
+  background-color: #006b52;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
-.login-btn:hover{
-    background:#0f6b3f;
+.login-btn:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #005a45;
 }
 
 @media(max-width:1100px){

@@ -57,9 +57,9 @@ function Navbar() {
       </Link>
 
       {/* Login */}
-      <button className="login-btn">
-        Login / Sign Up
-      </button>
+      <Link to="/login" className="login-btn">
+        Login/sign up
+      </Link>
     </nav>
   );
 }

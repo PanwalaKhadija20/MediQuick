@@ -14,7 +14,8 @@ import {
   Footer,
   Cart,
   Checkout,
-  Offers
+  Offers,
+  Login
 } from "./component";
 
 import Categories from "./pages/Categories";
@@ -106,6 +107,17 @@ function App() {
               <Footer />
             </>
           }
+        />
+        {/* Login */}
+        <Route
+          path="/login"
+          element={
+            <>
+            <Navbar />
+            <Login />
+            <Footer />
+            </>
+        }
         />
 
       </Routes>
