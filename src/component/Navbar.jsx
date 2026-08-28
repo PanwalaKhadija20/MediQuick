@@ -1,5 +1,7 @@
 import "../Navbar.css";
+
 import logoImg from "../assets/logo.png";
+
 import { Link } from "react-router-dom";
 
 import {
@@ -24,12 +26,6 @@ function Navbar() {
         </div>
       </Link>
 
-<<<<<<< HEAD
-      {/* Login */}
-      <Link to="/login" className="login-btn">
-        Login/sign up
-      </Link>
-=======
 
       {/* ================= LOCATION ================= */}
       <div className="location">
@@ -37,7 +33,6 @@ function Navbar() {
         <FaMapMarkerAlt className="location-icon" />
 
         <div className="location-text">
-
           <small>Deliver to</small>
 
           <select className="location-dropdown">
@@ -47,7 +42,6 @@ function Navbar() {
             <option>Varachha, Surat</option>
             <option>Athwa, Surat</option>
           </select>
-
         </div>
 
       </div>
@@ -68,26 +62,21 @@ function Navbar() {
         {/* Track Order */}
         <Link to="/track-order">Track Order</Link>
 
-       
       </div>
 
 
       {/* ================= CART ================= */}
       <Link to="/cart" className="cart">
-
         <FaShoppingCart />
-
         <span>0</span>
-
       </Link>
 
 
       {/* ================= LOGIN ================= */}
-      <button className="login-btn">
+      <Link to="/login" className="login-btn">
         Login / Sign Up
-      </button>
+      </Link>
 
->>>>>>> 0a598cf3dc18f566124bc75cdf06ff588ea7db8e
     </nav>
   );
 }
