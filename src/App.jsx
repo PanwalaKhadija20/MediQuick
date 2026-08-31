@@ -1,4 +1,6 @@
 import "./App.css";
+import { useEffect } from "react";
+import { getProducts } from "./api/productApi";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -17,6 +19,16 @@ import TrackOrder from "./pages/TrackOrder";
 
 
 function App() {
+
+  useEffect(() => {
+    getProducts()
+      .then((data) => {
+        console.log("Products from MongoDB:", data);
+      })
+      .catch((error) => {
+        console.error("Failed to load products:", error);
+      });
+  }, []);
   return (
     <BrowserRouter>
 
