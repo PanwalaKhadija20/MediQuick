@@ -1,48 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Cart.css";
 
-const initialCart = [
-  {
-    id: 1,
-    name: "Paracetamol 650mg",
-    type: "Strip of 15 Tablets",
-    price: 32,
-    oldPrice: 40,
-    discount: "20% OFF",
-    image: "/images/paracetamol.jpeg",
-  },
-  {
-    id: 2,
-    name: "Crocin 650mg",
-    type: "Strip of 15 Tablets",
-    price: 48,
-    oldPrice: 60,
-    discount: "20% OFF",
-    image: "/images/crocin.jpeg",
-  },
-  {
-    id: 3,
-    name: "Vicks VapoRub 25ml",
-    type: "Jar",
-    price: 85,
-    oldPrice: 100,
-    discount: "15% OFF",
-    image: "/images/vicks.jpeg",
-  },
-  {
-    id: 4,
-    name: "ORS Electrolyte Powder 21.8gm",
-    type: "Pack of 21.8g",
-    price: 20,
-    oldPrice: 25,
-    discount: "20% OFF",
-    image: "/images/ors.jpeg",
-  },
-];
-
 const suggestions = [
   {
+    id: 6,
     name: "Dolo 650mg",
     type: "Strip of 15 Tablets",
     price: 45,
@@ -53,6 +15,7 @@ const suggestions = [
     image: "/images/dolo.jpeg",
   },
   {
+    id: 7,
     name: "Calpol 650mg",
     type: "Strip of 15 Tablets",
     price: 40,
@@ -63,6 +26,7 @@ const suggestions = [
     image: "/images/calpol.jpeg",
   },
   {
+    id: 8,
     name: "Digene Gel",
     type: "Tube of 20g",
     price: 55,
@@ -73,6 +37,7 @@ const suggestions = [
     image: "/images/digene.jpeg",
   },
   {
+    id: 9,
     name: "Allegra 120mg",
     type: "Strip of 10 Tablets",
     price: 155,
@@ -83,6 +48,7 @@ const suggestions = [
     image: "/images/alegra.jpeg",
   },
   {
+    id: 10,
     name: "Vitamin C 1000mg",
     type: "Bottle of 15 Tablets",
     price: 120,
@@ -95,14 +61,31 @@ const suggestions = [
 ];
 
 function Cart() {
-  const [cart, setCart] = useState(initialCart);
-
-  // IMPORTANT: This connects the Cart page to Checkout page
   const navigate = useNavigate();
 
+  // Load cart from localStorage
+  const [cart, setCart] = useState(() => {
+    const savedCart = localStorage.getItem("cart");
+
+    if (savedCart) {
+      return JSON.parse(savedCart);
+    }
+
+    return [];
+  });
+
+  // Save cart whenever cart changes
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Update cart count in other components
+    window.dispatchEvent(new Event("cartUpdated"));
+  }, [cart]);
+
+  // Increase quantity
   const increaseQty = (id) => {
-    setCart(
-      cart.map((item) =>
+    setCart((currentCart) =>
+      currentCart.map((item) =>
         item.id === id
           ? {
               ...item,
@@ -113,39 +96,108 @@ function Cart() {
     );
   };
 
+  // Decrease quantity
   const decreaseQty = (id) => {
-    setCart(
-      cart.map((item) =>
-        item.id === id && (item.quantity || 1) > 1
-          ? {
-              ...item,
-              quantity: item.quantity - 1,
-            }
-          : item
-      )
+    setCart((currentCart) =>
+      currentCart
+        .map((item) =>
+          item.id === id
+            ? {
+                ...item,
+                quantity: Math.max(
+                  1,
+                  (item.quantity || 1) - 1
+                ),
+              }
+            : item
+        )
     );
   };
 
+  // Remove item
   const removeItem = (id) => {
-    setCart(cart.filter((item) => item.id !== id));
+    setCart((currentCart) =>
+      currentCart.filter((item) => item.id !== id)
+    );
   };
 
+  // Remove all items
+  const removeAllItems = () => {
+    setCart([]);
+  };
+
+  // Add suggestion to cart
+  const addSuggestionToCart = (item) => {
+    setCart((currentCart) => {
+      const existingMedicine = currentCart.find(
+        (cartItem) => cartItem.id === item.id
+      );
+
+      if (existingMedicine) {
+        return currentCart.map((cartItem) =>
+          cartItem.id === item.id
+            ? {
+                ...cartItem,
+                quantity: (cartItem.quantity || 1) + 1,
+              }
+            : cartItem
+        );
+      }
+
+      return [
+        ...currentCart,
+        {
+          ...item,
+          subtitle: item.type,
+          quantity: 1,
+        },
+      ];
+    });
+  };
+
+  // Continue shopping
+  const continueShopping = () => {
+    navigate("/");
+  };
+
+  // Convert price safely
+  const getPrice = (price) => {
+    if (typeof price === "number") {
+      return price;
+    }
+
+    return parseFloat(
+      String(price)
+        .replace("₹", "")
+        .replace(",", "")
+    ) || 0;
+  };
+
+  // Calculate subtotal
   const subtotal = cart.reduce(
     (total, item) =>
-      total + item.price * (item.quantity || 1),
+      total +
+      getPrice(item.price) *
+        (item.quantity || 1),
     0
   );
 
+  // Calculate original price
   const originalPrice = cart.reduce(
     (total, item) =>
-      total + item.oldPrice * (item.quantity || 1),
+      total +
+      getPrice(item.oldPrice || item.price) *
+        (item.quantity || 1),
     0
   );
 
+  // Discount
   const discount = originalPrice - subtotal;
 
+  // Delivery fee
   const deliveryFee = subtotal >= 199 ? 0 : 20;
 
+  // Final total
   const total = subtotal + deliveryFee;
 
   return (
@@ -161,7 +213,11 @@ function Cart() {
 
         <div>
           <h1>
-            My Cart <span>({cart.length} Items)</span>
+            My Cart{" "}
+            <span>
+              ({cart.length}{" "}
+              {cart.length === 1 ? "Item" : "Items"})
+            </span>
           </h1>
 
           <p>
@@ -225,10 +281,13 @@ function Cart() {
                 <h2>Your Cart is Empty</h2>
 
                 <p>
-                  Add some medicines to continue shopping.
+                  Add some medicines to continue
+                  shopping.
                 </p>
 
-                <button>
+                <button
+                  onClick={continueShopping}
+                >
                   Continue Shopping
                 </button>
 
@@ -248,6 +307,7 @@ function Cart() {
                     defaultChecked
                   />
 
+                  {/* Product Image */}
                   <div className="cart-product-image">
 
                     <img
@@ -257,25 +317,41 @@ function Cart() {
 
                   </div>
 
+                  {/* Product Details */}
                   <div className="cart-product-info">
 
-                    <h3>{item.name}</h3>
+                    <h3>
+                      {item.name}
+                    </h3>
 
-                    <p>{item.type}</p>
+                    <p>
+                      {item.subtitle ||
+                        item.type}
+                    </p>
 
                     <div className="price-row">
 
                       <strong>
-                        ₹{item.price.toFixed(2)}
+                        ₹
+                        {getPrice(
+                          item.price
+                        ).toFixed(2)}
                       </strong>
 
-                      <del>
-                        ₹{item.oldPrice.toFixed(2)}
-                      </del>
+                      {item.oldPrice && (
+                        <del>
+                          ₹
+                          {getPrice(
+                            item.oldPrice
+                          ).toFixed(2)}
+                        </del>
+                      )}
 
-                      <span>
-                        {item.discount}
-                      </span>
+                      {item.discount && (
+                        <span>
+                          {item.discount}
+                        </span>
+                      )}
 
                     </div>
 
@@ -315,7 +391,7 @@ function Cart() {
 
                     ₹
                     {(
-                      item.price *
+                      getPrice(item.price) *
                       (item.quantity || 1)
                     ).toFixed(2)}
 
@@ -353,9 +429,7 @@ function Cart() {
                 </label>
 
                 <button
-                  onClick={() =>
-                    setCart([])
-                  }
+                  onClick={removeAllItems}
                 >
                   🗑 Remove Selected
                 </button>
@@ -400,12 +474,17 @@ function Cart() {
 
           <div className="summary-box">
 
-            <h2>Order Summary</h2>
+            <h2>
+              Order Summary
+            </h2>
 
             <div className="summary-row">
 
               <span>
-                Price ({cart.length} items)
+                Price ({cart.length}{" "}
+                {cart.length === 1
+                  ? "item"
+                  : "items"})
               </span>
 
               <strong>
@@ -455,9 +534,11 @@ function Cart() {
             </div>
 
             <p className="saving">
+
               ♢ You saved ₹
               {discount.toFixed(2)}
               {" "}on this order
+
             </p>
 
             {/* Free Delivery */}
@@ -470,14 +551,25 @@ function Cart() {
               <div>
 
                 <p>
-                  Add items worth{" "}
-                  <b>
-                    ₹{Math.max(
-                      0,
-                      199 - subtotal
-                    )}
-                  </b>{" "}
-                  more to get
+
+                  {subtotal >= 199 ? (
+                    <>
+                      You have unlocked
+                    </>
+                  ) : (
+                    <>
+                      Add items worth{" "}
+                      <b>
+                        ₹
+                        {Math.max(
+                          0,
+                          199 - subtotal
+                        ).toFixed(2)}
+                      </b>{" "}
+                      more to get
+                    </>
+                  )}
+
                 </p>
 
                 <strong>
@@ -547,11 +639,15 @@ function Cart() {
               onClick={() =>
                 navigate("/checkout")
               }
+              disabled={cart.length === 0}
             >
               Proceed to Checkout →
             </button>
 
-            <button className="shopping-btn">
+            <button
+              className="shopping-btn"
+              onClick={continueShopping}
+            >
               🛒 Continue Shopping
             </button>
 
@@ -575,11 +671,11 @@ function Cart() {
         <div className="recommend-grid">
 
           {suggestions.map(
-            (item, index) => (
+            (item) => (
 
               <div
                 className="recommend-card"
-                key={index}
+                key={item.id}
               >
 
                 <div className="recommend-image">
@@ -620,7 +716,11 @@ function Cart() {
                   {item.reviews})
                 </div>
 
-                <button>
+                <button
+                  onClick={() =>
+                    addSuggestionToCart(item)
+                  }
+                >
                   🛒 Add to Cart
                 </button>
 
@@ -683,7 +783,7 @@ function Cart() {
 
       </div>
 
-      {/* FOOTER - KEPT EXACTLY AS YOUR CART FOOTER */}
+      {/* FOOTER */}
       <footer className="cart-footer">
 
         <div className="footer-brand">

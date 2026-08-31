@@ -4,23 +4,31 @@ import "./CustomerReviews.css";
 const reviews = [
   {
     text: "Very fast delivery and genuine medicines. Highly recommended!",
-    name: "Rakesh Patel",
+    name: "Jigar Pittalwala",
   },
   {
     text: "Best medical delivery service in Surat. Very reliable!",
-    name: "Hetal Shah",
+    name: "Hetal shah",
   },
   {
     text: "Good packaging and medicines delivered within 30 minutes.",
-    name: "Pratik Mehta",
+    name: "Pratik patel",
   },
   {
     text: "Excellent service and genuine medicines. Really satisfied!",
-    name: "Neha Patel",
+    name: "Nisha Patel",
   },
   {
     text: "Fast delivery and very easy ordering experience.",
-    name: "Rahul Shah",
+    name: "Aditya verma",
+  },
+  {
+    text: "Fast delivery and very easy ordering experience.",
+    name: "Aditya verma",
+  },
+  {
+    text: "Fast delivery and very easy ordering experience.",
+    name: "krutika patel",
   },
 ];
 

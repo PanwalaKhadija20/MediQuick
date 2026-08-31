@@ -39,9 +39,6 @@ function TopPharmacies() {
       <div className="pharmacy-heading">
         <h2>Top Rated Pharmacies in Surat</h2>
 
-        <button className="view-all">
-          View all pharmacies →
-        </button>
       </div>
 
       <div className="pharmacy-container">
@@ -80,10 +77,6 @@ function TopPharmacies() {
             <div className="rating">
               ⭐ {pharmacy.rating}
             </div>
-
-            <button className="store-btn">
-              See Store →
-            </button>
 
           </div>
         ))}

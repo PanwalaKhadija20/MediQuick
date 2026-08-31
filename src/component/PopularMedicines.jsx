@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./PopularMedicines.css";
 
 export const medicines = [
@@ -55,6 +56,7 @@ export const medicines = [
 ];
 
 function PopularMedicines() {
+  const navigate = useNavigate();
 
   // Add medicine to cart
   const addToCart = (medicine) => {
@@ -68,6 +70,7 @@ function PopularMedicines() {
     let updatedCart;
 
     if (existingMedicine) {
+      // Increase quantity if medicine already exists
       updatedCart = existingCart.map((item) =>
         item.id === medicine.id
           ? {
@@ -77,6 +80,7 @@ function PopularMedicines() {
           : item
       );
     } else {
+      // Add new medicine
       updatedCart = [
         ...existingCart,
         {
@@ -86,15 +90,17 @@ function PopularMedicines() {
       ];
     }
 
+    // Save cart
     localStorage.setItem(
       "cart",
       JSON.stringify(updatedCart)
     );
 
-    // Notify other components that cart changed
+    // Update cart count in other components
     window.dispatchEvent(new Event("cartUpdated"));
 
-    alert(`${medicine.name} added to cart!`);
+    // Go to Cart page
+    navigate("/cart");
   };
 
   return (
@@ -179,9 +185,7 @@ function PopularMedicines() {
 
                 <button
                   className="add-cart"
-                  onClick={() =>
-                    addToCart(medicine)
-                  }
+                  onClick={() => addToCart(medicine)}
                 >
                   Add to Cart
                 </button>

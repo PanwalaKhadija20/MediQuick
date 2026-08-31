@@ -250,28 +250,7 @@ const Hero = () => {
           </div>
         )}
 
-        {/* BUTTONS */}
-        <div className="hero-buttons">
-
-          <button className="upload-btn">
-            <FaUpload />
-
-            <div>
-              <h4>Upload Prescription</h4>
-              <p>Get medicines verified</p>
-            </div>
-          </button>
-
-          <button className="quick-btn">
-            <FaShoppingBag />
-
-            <div>
-              <h4>Quick Order</h4>
-              <p>Reorder saved medicines</p>
-            </div>
-          </button>
-
-        </div>
+       
 
         {/* FEATURES */}
         <div className="features">
