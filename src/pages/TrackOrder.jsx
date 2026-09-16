@@ -89,9 +89,6 @@ function TrackOrder() {
               <p>Placed on 11 May, 2026 at 09:45 AM</p>
             </div>
 
-            <button className="support-btn">
-              🎧 &nbsp; Contact Support
-            </button>
           </div>
 
           {/* Delivery Status */}
@@ -196,38 +193,6 @@ function TrackOrder() {
 
           </section>
 
-          {/* Bottom Features */}
-          <div className="features">
-            <div>
-              <span>🛡️</span>
-              <h4>100% Genuine</h4>
-              <p>Medicines</p>
-            </div>
-
-            <div>
-              <span>⚙️</span>
-              <h4>Licensed</h4>
-              <p>Pharmacies</p>
-            </div>
-
-            <div>
-              <span>🔒</span>
-              <h4>Secure</h4>
-              <p>Payments</p>
-            </div>
-
-            <div>
-              <span>↩️</span>
-              <h4>Easy Returns</h4>
-              <p>& Refunds</p>
-            </div>
-
-            <div>
-              <span>🎧</span>
-              <h4>24/7 Customer</h4>
-              <p>Support</p>
-            </div>
-          </div>
 
         </main>
 
