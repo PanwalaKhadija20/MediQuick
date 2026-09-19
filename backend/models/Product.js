@@ -16,6 +16,7 @@ const productSchema = new mongoose.Schema(
     price: {
       type: Number,
       required: true,
+      min: 0,
     },
 
     image: {
@@ -23,21 +24,38 @@ const productSchema = new mongoose.Schema(
       default: "",
     },
 
-    categories: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Category",
-      },
-    ],
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
+      default: null,
+    },
 
     stock: {
       type: Number,
       default: 0,
+      min: 0,
     },
 
     manufacturer: {
       type: String,
       default: "",
+    },
+
+    sku: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+
+    currency: {
+      type: String,
+      default: "INR",
+      trim: true,
+    },
+
+    isActive: {
+      type: Boolean,
+      default: true,
     },
   },
   {

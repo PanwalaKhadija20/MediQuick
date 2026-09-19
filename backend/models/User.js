@@ -30,6 +30,16 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+
+    role: {
+      type: String,
+      default: "USER",
+    },
+
+    permissions: {
+      type: [String],
+      default: [],
+    },
   },
   {
     timestamps: true,
